@@ -28,6 +28,10 @@
     font-weight: 500;
     margin: 0 10px;
 }
+.postLink{
+    text-decoration:none !important;
+    color:black !important;
+}
 .postDate{
     font-size: 12px;
 }
