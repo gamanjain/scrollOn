@@ -24,18 +24,25 @@ export default function Topbar() {
         </div>
         <div className="topbarRight">
           <div className="topBarLinks">
+            <Link to="/" className="linker">
             <span className="topbarLink">Homepage</span>
-            <span className="topbarLink">Timeline</span>
+            </Link>
+            <Link to="/" className="linker">
+            <span className="topbarLink">Timeline
+            </span>
+            </Link>
           </div>
           <div className="topbarIcons">
             <div className="topbarIconItem">
               <BsFillPersonFill/>
               <span className="topbarIconBadge">1</span>
             </div>
-            <div className="topbarIconItem">
-              <BsFillChatDotsFill/>
-              <span className="topbarIconBadge">2</span>
-            </div>
+            <Link to="/message/" className="linker">
+              <div className="topbarIconItem">
+                <BsFillChatDotsFill/>
+                <span className="topbarIconBadge">2</span>
+              </div>
+            </Link>
             <div className="topbarIconItem">
               <BsFillBellFill/>
               <span className="topbarIconBadge">1</span>
@@ -43,11 +50,11 @@ export default function Topbar() {
           </div>
           <Link to={`/profile/${user.username}`}>
             <img 
-                src={user.profilePicture 
+                src={user?.profilePicture 
                   ? PF+user.profilePicture 
-                  :user.gender==="M"
+                  :user?.gender==="M"
                   ? PF+"person/noPPM.png"
-                  : user.gender==="W"
+                  : user?.gender==="W"
                   ? PF+"person/noPPW.png"
                   : PF+"person/noPPN.png"
                 } 
