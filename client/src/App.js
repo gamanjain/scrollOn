@@ -5,6 +5,8 @@ import Register from "./pages/register/Register";
 import {BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Message from "./pages/messaging/Messaging";
+import Messaging from "./pages/messaging/Messaging";
 
 function App() {
 
@@ -21,6 +23,9 @@ function App() {
         />
         <Route exact path="/register" 
           element = {user ? <Navigate  to="/"/> : <Register/>}
+        />
+        <Route exact path="/message" 
+          element = {!user ? <Navigate  to="/"/> : <Messaging/>}
         />
         <Route exact path="/profile/:username" element={<Profile/>}/>
       </Routes>
